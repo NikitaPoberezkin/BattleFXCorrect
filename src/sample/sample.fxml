@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TextField fx:id="first_squad_name" layoutX="137.0" layoutY="22.0" prefHeight="25.0" prefWidth="98.0" />
+      <Label layoutX="16.0" layoutY="26.0" text="First squad name" />
+      <Label layoutX="16.0" layoutY="58.0" text="Second squad name" />
+      <TextField fx:id="second_squad_name" layoutX="137.0" layoutY="54.0" prefHeight="25.0" prefWidth="98.0" />
+      <TextArea fx:id="squad1" layoutX="16.0" layoutY="107.0" prefHeight="200.0" prefWidth="270.0" />
+      <TextArea fx:id="squad2" layoutX="365.0" layoutY="107.0" prefHeight="200.0" prefWidth="270.0" />
+      <ChoiceBox fx:id="types_of_warriors" layoutX="350.0" layoutY="22.0" prefHeight="25.0" prefWidth="73.0" />
+      <TextField fx:id="warrior_name" layoutX="423.0" layoutY="59.0" prefHeight="25.0" prefWidth="91.0" />
+      <Label layoutX="356.0" layoutY="63.0" text="Имя бойца" />
+      <ChoiceBox fx:id="squad_number" layoutX="437.0" layoutY="22.0" prefHeight="25.0" prefWidth="73.0" />
+      <Button fx:id="addbtn" layoutX="525.0" layoutY="22.0" mnemonicParsing="false" onAction="#addWarrior" prefHeight="63.0" prefWidth="108.0" text="Add warrior" />
+      <Button fx:id="create_squad" layoutX="241.0" layoutY="22.0" mnemonicParsing="false" onAction="#createSquads" prefHeight="56.0" prefWidth="98.0" text="Create squads" />
+      <Button fx:id="fight" layoutX="299.0" layoutY="195.0" mnemonicParsing="false" onAction="#goFight" text="Fight!" />
+      <TextArea fx:id="battle_log" layoutX="16.0" layoutY="315.0" prefHeight="262.0" prefWidth="621.0" />
+   </children>
+</AnchorPane>

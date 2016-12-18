@@ -3,7 +3,7 @@ package classesf;
 /**
  * Created by pober on 20.11.2016.
  */
-public class Archer implements Warrior {
+public class Archer implements Warrior { //хорошо бы вынести общее поведение в абстрактный класс
     private String name;
     private int health;
     private int damage;
@@ -28,11 +28,11 @@ public class Archer implements Warrior {
 
     public void takeDamage(int damage){
         this.health-=damage;
-        if (this.health<0) this.health =0;
+        if (this.health<0) this.health =0; //неотформатированный код
     }
 
     public boolean isAlive(){
-        if (this.health>0) return true;
+        if (this.health>0) return true; //просто return health > 0.
         return false;
     }
 
@@ -43,7 +43,7 @@ public class Archer implements Warrior {
     public Object clone(){
         try {
             Archer archer = (Archer) super.clone();
-            archer.name = new String(this.name);
+            archer.name = new String(this.name); //бесполезно создавать строку конструктором
             return archer;
         }
         catch (CloneNotSupportedException e){

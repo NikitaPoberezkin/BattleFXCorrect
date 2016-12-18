@@ -1,4 +1,4 @@
-package sample;
+package sample; //неинформативные имена пакетов
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

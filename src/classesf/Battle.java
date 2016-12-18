@@ -3,7 +3,7 @@ package classesf;
 /**
  * Created by pober on 22.11.2016.
  */
-public class Battle {
+public class Battle { //почему все методы статические?
     private static String battle_log;
 
     public static String getBattle_log(){
@@ -16,7 +16,7 @@ public class Battle {
         battle_log += warrior1.toString() + " нанес " + warrior2.toString() + " " + warrior1.attack() + " урона\n";
     }
 
-    public static void oneBattle(Squad squad1, Squad squad2){
+    public static void oneBattle(Squad squad1, Squad squad2){ //нет проверки наличия бойцов в отрядах
         battle_log ="";
         battle_log +="В битву вступают 2 отряда!\n";
         battle_log += squad1.toString();
@@ -33,7 +33,7 @@ public class Battle {
                 break;
             }
             Battle.oneRound(squad2,squad1);
-            battle_log += "\n"+squad1.toString()+squad2.toString();
+            battle_log += "\n"+squad1.toString()+squad2.toString(); //дублирование кода. вынести в oneRound
             dateHelper.skipTime();
             if (!squad1.hasAliveWarriors()){
                 battle_log += "\n"+squad2.getName() + " победили, время сражения: " + dateHelper.getFormattedDiff();

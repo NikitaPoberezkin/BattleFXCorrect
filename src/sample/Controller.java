@@ -36,9 +36,9 @@ public class Controller{
     @FXML
     private Button addbtn;
     @FXML
-    private ChoiceBox types_of_warriors;
+    private ChoiceBox types_of_warriors; //текст не умещается на компоненте
     @FXML
-    private ChoiceBox squad_number;
+    private ChoiceBox squad_number; //текст не умещается на компоненте
     @FXML
     TextField warrior_name;
     @FXML
@@ -64,7 +64,7 @@ public class Controller{
     }
 
     public void createSquads(){
-        squad_one = new Squad(first_squad_name.getText());
+        squad_one = new Squad(first_squad_name.getText()); //нужно значение имени по умолчанию
         squad_two = new Squad(second_squad_name.getText());
         squad1.setText(squad_one.toString());
         squad2.setText(squad_two.toString());
@@ -75,12 +75,20 @@ public class Controller{
         squad2.setText(squad_two.toString());
     }
 
-    public void addWarrior(){
+    public void addWarrior(){ //этот метод состоит из повторения одного и того же. нужно оставить здесь выбор изменяющихся частей и передавать их в методы с общим поведением
+/*      Squad squad = squad_one;
+        if(squad_number.getSelectionModel().getSelectedIndex() == 1) {
+            squad = squad_two;
+        }
+        Warrior warrior = ...
+        ...
+        squad.AddWarrior(warrior);
+*/
         switch (squad_number.getSelectionModel().getSelectedIndex() ){
-            case 0:
+            case 0: //для выбора из 2 вариантов использовать switch излишне
                 switch (types_of_warriors.getSelectionModel().getSelectedIndex()){
                     case 0:
-                        squad_one.AddWarrior(new Warlock(warrior_name.getText(), squad_one));
+                        squad_one.AddWarrior(new Warlock(warrior_name.getText(), squad_one)); //нужно значение имени по умолчанию. нет проверки существования отряда
                         squad1.setText(squad_one.toString());
                         break;
                     case 1:
